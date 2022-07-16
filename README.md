@@ -1,2 +1,2 @@
 # ft_transcendenceGAME
-Creating an online pong game using Node.JS and Socket.IO
+Creating an online pong game using Node.JS(Nest JS), TypeSript and Socket.IO
