@@ -9,11 +9,14 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 export class GameComponent implements AfterViewInit {
 
   @ViewChild('game') gameCanvas!: ElementRef<HTMLCanvasElement>;
-  private ctx! :CanvasRenderingContext2D;
+  private ctx!: CanvasRenderingContext2D;
   
   
-  ngAfterViewInit() {
-    this.ctx = this.gameCanvas.nativeElement.getContext('2d');
+  ngAfterViewInit(): void {
+    this.ctx = this.gameCanvas.nativeElement.getContext('2d')!;
     console.log(this.gameCanvas.nativeElement.getContext('2d'));
+
+    this.ctx.fillStyle = "black";
+    this.ctx.fillRect(0, 0, this.gameCanvas.nativeElement.width, this.gameCanvas.nativeElement.height);
   }
 }
