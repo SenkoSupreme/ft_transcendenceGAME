@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, Injectable, OnInit, ViewChild } from '@angular/core';
+import { GameService } from './game.service';
 
 
 @Component({
@@ -8,6 +9,7 @@ import { AfterViewInit, Component, ElementRef, HostListener, Injectable, OnInit,
 })
 export class GameComponent implements AfterViewInit {
 
+  chat = this.gameService.getMessage();
   @ViewChild('game') gameCanvas!: ElementRef<HTMLCanvasElement>;
   private ctx!: CanvasRenderingContext2D;
   public animation!: any; 
@@ -16,7 +18,8 @@ export class GameComponent implements AfterViewInit {
   public p1x: number; public p1y: number;
   public p2x: number; public p2y: number;
   public key: any;
-  constructor () {
+ 
+  constructor (private gameService: GameService) {
     this.animation = { idle: [[0,0]]};
     this.currentAnimation = "idle";
     this.currentAnimationFrame = 0;
