@@ -5,8 +5,13 @@
     height: 198px;
     outline: 1px solid #333;
     transform: scale(3) translateY(50%);
+    margin: 0 auto;
     
 }
 .game-container canvas {
     image-rendering: pixelated;
+}
+
+#game {
+    width: 100%;
 }
